@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-friendlygarden-dev-05133-authRole",
+      "UnauthRoleArn": "arn:aws:iam::373545907839:role/amplify-friendlygarden-dev-05133-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::373545907839:role/amplify-friendlygarden-dev-05133-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-friendlygarden-dev-05133-deployment",
+      "UnauthRoleName": "amplify-friendlygarden-dev-05133-unauthRole",
+      "StackName": "amplify-friendlygarden-dev-05133",
+      "StackId": "arn:aws:cloudformation:us-east-1:373545907839:stack/amplify-friendlygarden-dev-05133/6f400970-284b-11ee-8ab6-0a8ddd15f5cf",
+      "AmplifyAppId": "d1xuwpvwlu11qo"
+    }
+  }
+}
