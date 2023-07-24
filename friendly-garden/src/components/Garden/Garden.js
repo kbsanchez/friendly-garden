@@ -10,6 +10,7 @@ const Garden = () => {
   const [outputMatrix, setOutputMatrix] = useState([]);
   const [gardenBedSizeSelected, setGardenBedSizeSelected] = useState(false);
   const [testCompatibilitySelected, setTestCompatibilitySelected] = useState(false);
+  const [gardenBedSizeValid, setGardenBedSizeSelected] = useState(true);
 
   const plantOptionsArray = ["Empty", "Tomatoes", "Basil", "Carrots", "Lettuce", 
   "Cucumbers", "Sunflowers", "Mint", "Rosemary", "Chives", "Beans", 
@@ -27,24 +28,16 @@ const Garden = () => {
     )
   })
 
-  // const handleRowSizeValidation = (r) => {
-  //   if (r > 10 || r < 1) {
-  //     console.log('no')
-  //   } else {
-  //     setRows()
-  //   }
-  // };
-
-  const handleColSizeValidation = () => {
-    
-  };
+  const handleMatrixSizeValidation = () => {};
 
   const handleMatrixSizeChange = () => {
-    const newMatrix = Array.from({ length: rows }, () =>
-      Array.from({ length: cols }, () => 0)
-    );
-    setMatrix(newMatrix);
-    setGardenBedSizeSelected(true);
+    if(gardenBedSizeValid){
+      const newMatrix = Array.from({ length: rows }, () =>
+        Array.from({ length: cols }, () => 0)
+      );
+      setMatrix(newMatrix);
+      setGardenBedSizeSelected(true);
+    }
   };
 
   const handleCellChange = (rowIndex, colIndex, value) => {
