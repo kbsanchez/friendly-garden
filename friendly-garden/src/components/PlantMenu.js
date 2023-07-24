@@ -11,15 +11,16 @@ export default function PlantMenu() {
     "Hyssop", "Horseradish", "Melons", "Sweet potatoes"]
 
     return (
-        <div style={{backgroundColor: 'aqua', height: '100vh', width: '27%', float: 'left', overflowY: 'auto'}}>
-            <header style={{fontWeight: 'bolder', fontSize: '25px'}}>
+        <div style={{backgroundColor: '#A9FFF7', height: '100vh', width: '27%', float: 'left', overflowY: 'auto'}}>
+            <header style={{fontWeight: 'bolder', fontSize: '25px', textAlign: 'center'}}>
                 <span>
                     Plant Menu
                 </span>
+                <br />
+                {/* <h6>
+                Drag and Drop from the available options:
+                </h6> */}
             </header>
-            <span>
-                add plants to garden bed
-            </span>
 
             <Container style={{paddingBottom: '20px', paddingTop: '20px'}}>
                 <Row xs={1} md={2} className="g-4">
@@ -45,6 +46,12 @@ export default function PlantMenu() {
                     ))}
                 </Row>
             </Container>
+
+            <h6 style={{textAlign: 'center'}}>
+                Missing your favorite plant? <br/>
+                Contact me with any suggestions! :-)
+            </h6>
+
         </div>
     )
 }   

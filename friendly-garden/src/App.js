@@ -1,6 +1,6 @@
 import React from 'react';
 import PlantMenu from './components/PlantMenu'
-import Garden from './components/Garden'
+import Garden from './components/Garden/Garden'
 
 const App = () => {
   return(
