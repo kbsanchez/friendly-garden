@@ -10,6 +10,11 @@
       "StackName": "amplify-friendlygarden-dev-05133",
       "StackId": "arn:aws:cloudformation:us-east-1:373545907839:stack/amplify-friendlygarden-dev-05133/6f400970-284b-11ee-8ab6-0a8ddd15f5cf",
       "AmplifyAppId": "d1xuwpvwlu11qo"
+    },
+    "categories": {
+      "api": {
+        "friendlygarden": {}
+      }
     }
   }
 }
