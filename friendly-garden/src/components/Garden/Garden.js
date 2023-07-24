@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Footer from '../Footer';
+import slogan from './slogan.png'
 
 const Garden = () => {
   const [matrix, setMatrix] = useState([]);
@@ -26,6 +27,18 @@ const Garden = () => {
     )
   })
 
+  // const handleRowSizeValidation = (r) => {
+  //   if (r > 10 || r < 1) {
+  //     console.log('no')
+  //   } else {
+  //     setRows()
+  //   }
+  // };
+
+  const handleColSizeValidation = () => {
+    
+  };
+
   const handleMatrixSizeChange = () => {
     const newMatrix = Array.from({ length: rows }, () =>
       Array.from({ length: cols }, () => 0)
@@ -41,10 +54,8 @@ const Garden = () => {
   };
 
   const handleReset = () => {
-    const resetMatrix = [...matrix];
-    
-
-    setMatrix(resetMatrix);
+    setGardenBedSizeSelected(false);
+    setMatrix([]);
   };
 
   const handleOutputMatrixGeneration = () => {
@@ -54,7 +65,10 @@ const Garden = () => {
   return (
     <div style={{backgroundColor: '#9E643C', height: '100vh', width: '73%', float: 'left', overflowY: 'auto'}}>
       <Container>
-        <h1 style={{textAlign: 'center'}}>Friendly Garden</h1>
+        <h1 style={{textAlign: 'center', display: 'inline-flex', width: '80%', margin: '0 auto'}}>
+          <img style={{margin: '0 auto'}} src={slogan} alt='Are We Friends?'/> 
+          <p style={{marginTop: '50px', marginLeft: '-22%', color: 'white', fontWeight: 'bolder'}}>Garden</p>
+        </h1>
         {(gardenBedSizeSelected === false) && 
         <div style={{margin: 'auto', width: '50%'}}>
           <Form>
@@ -65,8 +79,14 @@ const Garden = () => {
                   style={{width: '30vh'}}
                   type="number"
                   value={rows}
+                  min='1'
+                  max='10'
+                  isInvalid={(rows < 1) || (rows > 10)}
                   onChange={(e) => setRows(parseInt(e.target.value))}
                 />
+                <Form.Control.Feedback type="invalid" style={{color: 'white', paddingLeft: '4px'}}>
+                  Choose a number between 1-10.
+                </Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} controlId="cols" style={{width: '30vh'}}>
@@ -75,8 +95,14 @@ const Garden = () => {
                   style={{width: '30vh'}}
                   type="number"
                   value={cols}
+                  min='1'
+                  max='10'
+                  isInvalid={(cols < 1) || (cols > 10)}
                   onChange={(e) => setCols(parseInt(e.target.value))}
                 />
+                <Form.Control.Feedback type="invalid" style={{color: 'white', paddingLeft: '4px'}}>
+                  Choose a number between 1-10.
+                </Form.Control.Feedback>
               </Form.Group>
             </Row>
             <div style={{textAlign: 'center'}}>
