@@ -10,7 +10,7 @@ const Garden = () => {
   const [outputMatrix, setOutputMatrix] = useState([]);
   const [gardenBedSizeSelected, setGardenBedSizeSelected] = useState(false);
   const [testCompatibilitySelected, setTestCompatibilitySelected] = useState(false);
-  const [gardenBedSizeValid, setGardenBedSizeSelected] = useState(true);
+  const [gardenBedSizeValid, setGardenBedSizeValid] = useState(true);
 
   const plantOptionsArray = ["Empty", "Tomatoes", "Basil", "Carrots", "Lettuce", 
   "Cucumbers", "Sunflowers", "Mint", "Rosemary", "Chives", "Beans", 
