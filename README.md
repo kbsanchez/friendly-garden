@@ -1,4 +1,6 @@
-# Companion Garden Mapper Project 🪴 || [AreWeFriends?Garden.com](https://www.arewefriendsgarden.org)
+# Companion Garden Mapper Project 🪴 || [AreWeFriends?Garden.org](https://www.arewefriendsgarden.org)
+#### 🧰 This project is currently under development
+
 
 ## Table of Contents
 
