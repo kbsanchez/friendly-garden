@@ -14,12 +14,9 @@ export default function PlantMenu() {
         <div style={{backgroundColor: '#A9FFF7', height: '100vh', width: '27%', float: 'left', overflowY: 'auto'}}>
             <header style={{fontWeight: 'bolder', fontSize: '25px', textAlign: 'center'}}>
                 <span>
-                    Plant Menu
+                    Plants
                 </span>
                 <br />
-                {/* <h6>
-                Drag and Drop from the available options:
-                </h6> */}
             </header>
 
             <Container style={{paddingBottom: '20px', paddingTop: '20px'}}>

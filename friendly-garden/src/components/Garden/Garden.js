@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import Pot from './Pot'
 import Footer from '../Footer';
-import slogan from './slogan.png'
+import slogan from '../../assets/slogan.png'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import './Garden.css'
 
 const Garden = () => {
   const [matrix, setMatrix] = useState([]);
@@ -10,7 +12,7 @@ const Garden = () => {
   const [outputMatrix, setOutputMatrix] = useState([]);
   const [gardenBedSizeSelected, setGardenBedSizeSelected] = useState(false);
   const [testCompatibilitySelected, setTestCompatibilitySelected] = useState(false);
-  const [gardenBedSizeValid, setGardenBedSizeValid] = useState(true);
+  const [sizeValidated, setSizeValid] = useState(false);
 
   const plantOptionsArray = ["Empty", "Tomatoes", "Basil", "Carrots", "Lettuce", 
   "Cucumbers", "Sunflowers", "Mint", "Rosemary", "Chives", "Beans", 
@@ -28,10 +30,8 @@ const Garden = () => {
     )
   })
 
-  const handleMatrixSizeValidation = () => {};
-
   const handleMatrixSizeChange = () => {
-    if(gardenBedSizeValid){
+    if(!sizeValidated){
       const newMatrix = Array.from({ length: rows }, () =>
         Array.from({ length: cols }, () => 0)
       );
@@ -56,15 +56,15 @@ const Garden = () => {
   };
 
   return (
-    <div style={{backgroundColor: '#9E643C', height: '100vh', width: '73%', float: 'left', overflowY: 'auto'}}>
-      <Container>
-        <h1 style={{textAlign: 'center', display: 'inline-flex', width: '80%', margin: '0 auto'}}>
-          <img style={{margin: '0 auto'}} src={slogan} alt='Are We Friends?'/> 
-          <p style={{marginTop: '50px', marginLeft: '-22%', color: 'white', fontWeight: 'bolder'}}>Garden</p>
+    <div className='garden-parent' style={{backgroundColor: '#9E643C', height: '100vh', width: '73%', float: 'left', overflowY: 'auto'}}>
+      <Container className='garden-container' style={{minWidth: '1000px'}}>
+        <h1 className='garden-webtitle' style={{textAlign: 'center', display: 'inline-flex', width: '80%', margin: '0 auto'}}>
+          <img className='garden-webtitle-image' style={{margin: '0 auto'}} src={slogan} alt='Are We Friends?'/> 
+          <p className='garden-webtitle-text' style={{marginTop: '50px', marginLeft: '-22%', color: 'white', fontWeight: 'bolder'}}>Garden</p>
         </h1>
         {(gardenBedSizeSelected === false) && 
-        <div style={{margin: 'auto', width: '50%'}}>
-          <Form>
+        <div className='garden-matrix-genform' style={{margin: 'auto', width: '50%'}}>
+          <Form noValidate validated={sizeValidated}>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="rows" style={{width: '30vh'}}>
                 <Form.Label>Rows</Form.Label>
@@ -117,25 +117,27 @@ const Garden = () => {
                     <Row key={rowIndex}>
                       {row.map((cell, colIndex) => (
                         <Col key={colIndex} className="matrix-cell">
-                          <Form.Select>
-                            type="text"
-                            value={cell}
-                            {options}
-                            onChange={(e) =>
-                              handleCellChange(rowIndex, colIndex, e.target.value)
-                            }
-                          </Form.Select>
+                          <Pot potColor='grey'>
+                            <Form.Select>
+                                type="text"
+                                value={cell}
+                                {options}
+                                onChange={(e) =>
+                                handleCellChange(rowIndex, colIndex, e.target.value)
+                                }
+                            </Form.Select>
+                          </Pot>
                         </Col>
                       ))}
                     </Row>
                   
                 ))}
               </div>
-              <div style={{display: 'flex', justifyContent: 'center', marginBottom: '50px'}}>
-              <Button style={{marginTop: '15px', marginInline: '10px', background: '#880808', borderColor: '#7B1818'}} onClick={handleReset}>
+              <div className='matrix-button-options' style={{display: 'flex', justifyContent: 'center', marginBottom: '50px'}}>
+              <Button className="reset-button" style={{marginTop: '15px', marginInline: '10px', background: '#880808', borderColor: '#7B1818'}} onClick={handleReset}>
                   Reset
                 </Button>
-                <Button classname="test-compatibility-button" style={{marginTop: '15px', marginRight: '10px', background: '#50C878', borderColor: '#00A36C'}} onClick={handleOutputMatrixGeneration}>
+                <Button className="test-compatibility-button" style={{marginTop: '15px', marginRight: '10px', background: '#50C878', borderColor: '#00A36C'}} onClick={handleOutputMatrixGeneration}>
                   Test Compatibility
                 </Button>
               </div>

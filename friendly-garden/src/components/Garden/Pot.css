@@ -1,0 +1,64 @@
+.pot-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+.pot-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.outer-circle {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #000;
+}
+
+.inner-circle {
+    width: 70%;
+    height: 70%;
+    border: 2px dashed #000;
+    top: 15%;
+    left: 15%;
+}
+
+.grey {
+    background-color: hsl(0, 0%, 50%);
+}
+.grey-inner {
+    background-color: hsl(0, 0%, 60%);
+}
+
+.purple {
+    background-color: hsl(279, 60%, 45%);
+}
+.purple-inner {
+    background-color: hsl(279, 60%, 60%);
+}
+
+.yellow {
+    background-color: hsl(58, 100%, 50%);
+}
+.yellow-inner {
+    background-color: hsl(58, 100%, 70%);
+}
+
+.red {
+    background-color: hsl(0, 100%, 60%);
+}
+.red-inner {
+    background-color: hsl(0, 100%, 70%);
+}
+
+.green {
+    background-color: hsl(123, 68%, 40%);
+}
+.green-inner {
+    background-color: hsl(123, 68%, 50%);
+}
+
+.selected {
+    border: 2px solid #000;
+}

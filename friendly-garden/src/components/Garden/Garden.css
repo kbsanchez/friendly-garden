@@ -1,0 +1,64 @@
+.garden-parent {
+    background-color: #37281d;
+    height: 100vh;
+    width: 73%;
+    float: left;
+    overflow-y: auto;
+}
+.garden-container {
+    min-width: 1000px;
+    min-height: 93%;
+}
+.garden-webtitle {
+    text-align: center;
+    display: inline-flex;
+    width: 80%;
+    margin: 0 auto;
+}
+.garden-webtitle-image {
+    margin: 0 auto;
+    -webkit-filter: drop-shadow(2px 1px 0 black)
+                  drop-shadow(-1px -1px 0 black);
+    filter: drop-shadow(2px 1px 0 black) 
+          drop-shadow(-1px -1px 0 white);
+}
+.garden-webtitle-text {
+    margin-top: 55px;
+    margin-left: -15%;
+    color: #f0e2e2;
+    font-size: larger;
+    font-weight: bolder;
+    -webkit-filter: drop-shadow(2px 1px 0 black)
+                  drop-shadow(-1px -1px 0 black);
+    filter: drop-shadow(2px 1px 0 black) 
+          drop-shadow(-1px -1px 0 white);
+}
+.garden-matrix-genform {
+    margin: auto;
+    width: 50%;
+}
+.matrix-container {
+    margin-top:  2vh;
+    margin-inline: 2%;
+    
+}
+.garden-bed {
+    border: 5px solid black;
+    padding: 5px;
+    display: table;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.matrix-cell {
+    margin: 2px;
+    display: flex;
+    justify-content: center; 
+    width: 130px;
+    height: 130px;
+    position: relative;
+}
+.matrix-button-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
